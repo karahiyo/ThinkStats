@@ -10,14 +10,15 @@ def Summarize(data_dir):
     table, first, others = F.MakeTables(data_dir)
     F.ProcessTables(first, others)
 
-    print 'Number of first babies',  first.n
-    print 'Number of others', others.n
+    print u'第一子総数：',  first.n
+    print u'第二子以降の総数：', others.n
 
     mu1, mu2 = first.mu, others.mu
 
-    print 'Mean gestation in weeks:'
-    print 'First babies',  mu1
-    print 'Others', mu2
+    print u'妊娠期間'
+    print '第一子',  mu1
+    print 'その他', mu2
+    print '差：',  mu1-mu2
 
     return first, others, mu1, mu2
 
