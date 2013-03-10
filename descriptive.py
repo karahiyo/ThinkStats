@@ -100,6 +100,7 @@ def MakeFigures(firsts, others):
     # make the histogram
     axis = [23, 46, 0, 2700]
     Hists([firsts.hist, others.hist])
+    pyplot.show()
     myplot.Save(root='nsfg_hist',
                 title='Histogram',
                 xlabel='weeks',
@@ -108,13 +109,13 @@ def MakeFigures(firsts, others):
 
     # make the PMF
     axis = [23, 46, 0, 0.6]
-    Hists([firsts.pmf, others.pmf])
+    Pmfs([firsts.pmf, others.pmf])
+    pyplot.show()
     myplot.Save(root='nsfg_pmf',
                 title='PMF',
                 xlabel='weeks',
                 ylabel='probability',
                 axis=axis)
-
 
 def Hists(hists):
     """Plot two histograms on the same axes.
@@ -135,6 +136,24 @@ def Hists(hists):
         xs = Shift(xs, shifts[i])
         pyplot.bar(xs, fs, label=hist.name, width=width, **option_list[i])
 
+def Pmfs(pmfs):
+    """Plot two prms on the same axes.
+
+    orms: list of Prm
+    """
+    width = 0.4
+    shifts = [-width, 0.0]
+
+    option_list = [
+            dict(color='0.9'),
+            dict(color='blue')
+            ]
+
+    pyplot.clf()
+    for i, pmf in enumerate(pmfs):
+        xs, fs = pmf.Render()
+        xs = Shift(xs, shifts[i])
+        pyplot.bar(xs, fs, label=pmf.name, width=width, **option_list[i])
 
 def Shift(xs, shift):
     """Adds a constant to a sequence of values.
@@ -174,7 +193,7 @@ def main(name, data_dir='./data'):
     pool, firsts, others = MakeTables(data_dir)
     Summarize(pool, firsts, others)
     MakeFigures(firsts, others)
-    MakeDiffFigure(firsts, others)
+    #MakeDiffFigure(firsts, others)
 
 
 if __name__ == '__main__':

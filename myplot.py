@@ -76,6 +76,7 @@ def Pmf(pmf, **options):
     """
     xs, ps = pmf.Render()
     options = Underride(options, label=pmf.name)
+    print options
     Plot(xs, ps, **options)
 
 
@@ -84,7 +85,7 @@ def Pmfs(pmfs, **options):
 
     Options are passed along for all PMFs.  If you want different
     options for each pmf, make multiple calls to Pmf.
-    
+
     Args:
       pmfs: sequence of PMF objects
       options: keyword args passed to pyplot.plot
@@ -104,7 +105,7 @@ def Hist(hist, **options):
     xs, fs = hist.Render()
     width = min(Diff(xs))
 
-    options = Underride(options, 
+    options = Underride(options,
                         label=hist.name,
                         align='center',
                         edgecolor='blue',
@@ -187,7 +188,7 @@ def Cdf(cdf, complement=False, transform=None, **options):
 
 def Cdfs(cdfs, complement=False, transform=None, **options):
     """Plots a sequence of CDFs.
-    
+
     Args:
       cdfs: sequence of CDF objects
       complement: boolean, whether to plot the complementary CDF
@@ -200,7 +201,7 @@ def Cdfs(cdfs, complement=False, transform=None, **options):
 
 def Contour(d, pcolor=False, contour=True, **options):
     """Makes a contour plot.
-    
+
     d: map from (x, y) to z
     pcolor: boolean, whether to make a pseudocolor plot
     contour: boolean, whether to make a contour plot
