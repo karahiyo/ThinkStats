@@ -59,6 +59,26 @@ class Test(unittest.TestCase):
         pmf.Normalize()
         self.checkPmf(pmf)
 
+    def testIncr(self):
+        t = [1, 2, 2, 3, 5]
+        pmf = Pmf.MakePmfFromList(t)
+
+        self.assertEquals(pmf.Prob(2), 0.4)
+        pmf.Incr(2, 0.2)
+        self.assertAlmostEquals(pmf.Prob(2), 0.6)
+
+    def testMult(self):
+        t = [1, 2, 2, 3, 5]
+        pmf = Pmf.MakePmfFromList(t)
+
+        self.assertEquals(pmf.Prob(2), 0.4)
+        pmf.Mult(2, 0.5)
+        self.assertAlmostEquals(pmf.Prob(2), 0.2)
+        self.assertNotEquals(pmf.Total(), 1)
+        pmf.Normalize()
+        self.assertEquals(pmf.Total(), 1)
+
+
     def testIncrAndNormalize(self):
         pmf = Pmf.Pmf()
         t = [1, 2, 2, 3, 5]
