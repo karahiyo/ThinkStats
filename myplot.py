@@ -76,7 +76,6 @@ def Pmf(pmf, **options):
     """
     xs, ps = pmf.Render()
     options = Underride(options, label=pmf.name)
-    print options
     Plot(xs, ps, **options)
 
 
