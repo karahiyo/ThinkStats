@@ -1,14 +1,23 @@
-#プログラマのための統計入門
-
+#Think Stats
+# ~ プログラマのための統計入門
 http://www.greenteapress.com/thinkstats/
 
-2002FemResp.dat.gz<br>
-* 女性回答者7,643人分のデータ。
-* 一行につき一人分のデータが記録されている。
+のためのメモと演習。
 
-2002FemPreg.dat.gz<br>
-* 回答者から報告された妊娠についてのデータ。
+###Coding with
+* Python 2.7.2
 
-birthordのドキュメント<br>
-<a href="http://www.icpsr.umich.edu/nsfg6/Controller?displayPage=labelDetails&fileCode=PREG&section=&subSec=8016&srtLabel=611933">http://www.icpsr.umich.edu/nsfg6/Controller?displayPage=labelDetails&fileCode=PREG&section=&subSec=8016&srtLabel=611933
+###Authors
+* Allen Downey,  Probably Overthinking It
+* Brooke M. Fujita,  buruzaemon@github
+
+###License
+* All code from Think Stats is covered under the GNU GPL v3 license.
+* All text,  etc. from Think Status is covered under the Creative Commons 3.0 BY-SA
+* Anything else I wrote? Completely free to use,  but you are on your own. Caveat emptor.
+
+###Links
+* <a href="http://code.google.com/p/thinkstats/">thinkstats - Google Code Project</a>
+* <a href="http://code.google.com/p/thinkstats/source/browse/#svn%2Ftrunk%2Fworkspace.thinkstats%2FThinkStats">thinkstats in SVN</a>
+* <a href="http://www.icpsr.umich.edu/nsfg6/Controller?displayPage=labelDetails&fileCode=PREG&section=&subSec=8016&srtLabel=611933">birthordのドキュメント
 </a>
