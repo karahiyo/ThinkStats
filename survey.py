@@ -181,7 +181,7 @@ class Pregnancies(Table):
                 pass
 
 
-def main(name, data_dir='.'):
+def main(name, data_dir='./data'):
     resp = Respondents()
     resp.ReadRecords(data_dir)
     print 'Number of respondents', len(resp.records)
